@@ -25,7 +25,7 @@ Many “normal” user facing packages written in Haskell, like `niv` or `cachix
 are also exposed at the top level, so there is nothing haskell specific to
 installing and using them.
 
-All of these packages originally live in the `haskellPackages` package set and
+All of these packages originally lived in the `haskellPackages` package set and
 are re-exposed with a reduced dependency closure for convenience.
 
 The `haskellPackages` set includes at least one version of every package from
@@ -53,15 +53,25 @@ part of [Stackage Nightly][stackage-nightly] as the default
 version. For all other packages we use the latest version from Hackage.
 Sometimes alternative versions of packages are provided whose attribute names
 are their normal name with their version appended after an underscore, e.g.
-`Cabal_3_8_1_0`. If you are interested in details how the package set is
+`Cabal_3_8_1_0`.
+
+<!--
+TODO(@sternenseemann):
+If you are interested in details how the package set is
 populated, read the section [Package set
 generation](#sec-haskell-package-set-generation).
+-->
 
 Roughly half of the 16K packages contained in `haskellPackages` don't actually
 build and are marked as broken semi-automatically. Most of those packages are
 deprecated or unmaintained, but sometimes packages that should, don't build.
-Very often fixing them is not a lot of work. How you can help with that is
+Very often fixing them is not a lot of work.
+
+<!--
+TODO(@sternenseemann):
+How you can help with that is
 described in [Fixing a broken package](#sec-haskell-fixing-a-broken-package).
+-->
 
 `haskellPackages` is built with our default compiler, but we also provide other
 releases of GHC and package sets built with them. You can list all available
@@ -858,11 +868,11 @@ benchmark component.
 `dontCoverage drv`
 : Sets the `doCoverage` argument to `false` for `drv`.
 
-### Overriding the entire package set
-
 <!--
 
 TODO(@NixOS/haskell): finish these planned sections
+### Overriding the entire package set
+
 
 ## Import-from-Derivation helpers
 
