@@ -188,7 +188,7 @@ If `null` (which is the default value), the one included in `src` is used.
 
 `doHoogle`
 : Whether to generate an index file for [hoogle][hoogle] as part of
-`haddockPhase` by passing the [--hoogle option][haddock-hoogle-option].
+`haddockPhase` by passing the [`--hoogle` option][haddock-hoogle-option].
 Defaults to `true`.
 
 `doHaddockQuickjump`
@@ -225,7 +225,7 @@ Enabled by default if supported.
 
 `hyperlinkSource`
 : Whether to render the source as well as part of the haddock documentation
-by passing [--hyperlinked-source][haddock-hyperlinked-source-option].
+by passing the [`--hyperlinked-source` flag][haddock-hyperlinked-source-option].
 Defaults to `true`.
 
 `isExecutable`
