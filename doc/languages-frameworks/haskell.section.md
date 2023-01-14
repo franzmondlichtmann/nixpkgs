@@ -728,11 +728,14 @@ that may refer to other Haskell packages' store paths (like libraries and
 documentation). This dramatically reduces the closure size of the resulting
 derivation. Note that the executables are only statically linked against their
 Haskell dependencies, but will still link dynamically against libc, GMP and
-other system library dependencies.
+other system library dependencies. If dependencies use their Cabal-generated
+`Paths_*` module, this may not work as well if GHC's dead code elimination
+is unable to remove the references to the dependency's store path that module
+contains.
 
 `enableSeparateBinOutput drv`
 : Install executables produced by `drv` to a separate `bin` output. This
-has a similar result as `justStaticExecutables`, but preserves the libraries
+has a similar effect as `justStaticExecutables`, but preserves the libraries
 and documentation in the `out` output alongside the `bin` output with a
 much smaller closure size.
 
