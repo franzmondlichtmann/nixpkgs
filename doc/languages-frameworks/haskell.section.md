@@ -244,8 +244,9 @@ behind a flag.
 : Whether to use the `-j` flag to make GHC/Cabal start multiple jobs in parallel.
 
 `maxBuildCores`
-: Upper limit of jobs to use in parallel for compilation regardless of `$NIX_BUILD_CORES`.
-Defaults to 16 as haskell compilation with GHC currently sees a performance regression
+: Upper limit of jobs to use in parallel for compilation regardless of
+`$NIX_BUILD_CORES`. Defaults to 16 as haskell compilation with GHC currently
+sees a [performance regression](https://gitlab.haskell.org/ghc/ghc/-/issues/9221)
 if too many parallel jobs are used.
 
 `doCoverage`
