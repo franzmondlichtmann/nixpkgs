@@ -961,7 +961,7 @@ on the issue linked above.
 [profiling]: https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/profiling.html
 [haskell-program-coverage]: https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/profiling.html#observing-code-coverage
 [profiling-detail]: https://cabal.readthedocs.io/en/latest/cabal-project.html#cfg-field-profiling-detail
-[jailbreak-cabal]: https://github.com/peti/jailbreak-cabal/
+[jailbreak-cabal]: https://github.com/NixOS/jailbreak-cabal/
 [cpphs]: https://hackage.haskell.org/package/cpphs
 [cabal-project-files]: https://cabal.readthedocs.io/en/latest/cabal-project.html
 [optparse-applicative-completions]: https://github.com/pcapriotti/optparse-applicative/blob/7726b63796aa5d0df82e926d467f039b78ca09e2/README.md#bash-zsh-and-fish-completions
