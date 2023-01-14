@@ -752,7 +752,7 @@ much smaller closure size.
 `markBroken drv`
 : Sets the `broken` flag to `true` for `drv`.
 
-`markUnbroken drv`
+`markUnbroken drv`, `unmarkBroken drv`
 : Set the `broken` flag to `false` for `drv`.
 
 `doDistribute drv`
