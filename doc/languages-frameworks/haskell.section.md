@@ -241,7 +241,7 @@ lift version bounds if they are conditional, e.g. if a dependency is hidden
 behind a flag.
 
 `enableParallelBuilding`
-: Whether to use the `-j` flag to start multiple GHC jobs in parallel.
+: Whether to use the `-j` flag to make GHC/Cabal start multiple jobs in parallel.
 
 `maxBuildCores`
 : Upper limit of jobs to use in parallel for compilation regardless of `$NIX_BUILD_CORES`.
