@@ -714,10 +714,13 @@ as `src`. The `version` attribute is optional. Prefer this function over
 overriding `src` via `overrideCabal`, since it also automatically takes care of
 removing any Hackage revisions.
 
+<!-- TODO(@sternenseemann): deprecated
+
 `generateOptparseApplicativeCompletions list drv`
 : Generate and install shell completion files for the installed executables whose
 names are given via `list`. The executables need to be using `optparse-applicative`
 for this to work.
+-->
 
 `justStaticExecutables drv`
 : Only build and install the executables produced by `drv`, removing everything
