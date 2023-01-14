@@ -465,10 +465,19 @@ $ nix-shell -A haskellPackages.random.env '<nixpkgs>'
 ```
 
 As you can see, the environment contains a GHC which is set up so it finds all
-dependencies of `random`. Since nixpkgs only relies on `Setup.hs` for actually
-building the package, the environment doesn't contain familiar development tools
-like `cabal-install`. If you have it installed on your system anyway, it will
-work as expected in the `nix-shell` (as long as you don't use `--pure`).
+dependencies of `random`. Note that this environment does not mirror
+the environment used to build the package, but is intended as a convenient
+tool for development and simple debugging. `env` relies on the `ghcWithPackages`
+wrapper which automatically injects a pre-populated package-db into every
+GHC invocation. When building the derivation, the appropriate flags would always
+be passed explicitly.
+
+`env` mirrors the normal derivation environment in one aspect: It does not include
+familiar development tools like `cabal-install`, since we rely on plain `Setup.hs`
+to build all packages. However, `cabal-install` will work as expected if in
+`PATH` (e.g. when installed globally and using a `nix-shell` without `--pure`).
+A declarative and pure way of adding arbitrary development tools is provided
+via [`shellFor`](#ssec-haskell-shellFor).
 
 <!-- TODO(@sternenseemann): this doesn't work in practice (anymore?)
 This topic needs to be investigated again; Deleting the local hackage db is
