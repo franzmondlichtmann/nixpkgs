@@ -405,7 +405,7 @@ the [Meta-attributes section](#chap-meta) for their documentation.
 * These attributes are populated with a default value if omitted:
     * `homepage`: defaults to the hackage page for `pname`.
     * `platforms`: defaults to `lib.platforms.all` (since GHC can cross-compile)
-* These attributes are only passed if given:
+* These attributes are only set if given:
     * `description`
     * `license`
     * `changelog`
