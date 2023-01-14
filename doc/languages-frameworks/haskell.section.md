@@ -53,12 +53,11 @@ hackage. Since hackage allows names that are not valid nix without extra
 escaping, you sometimes need to extra care when handling attribute names like
 `3dmodels`.
 
-For packages that are part of stackage, we use the version that is currently
-part of [Stackage Nightly][stackage-nightly] as the default
-version. For all other packages we use the latest version from Hackage.
-Sometimes alternative versions of packages are provided whose attribute names
-are their normal name with their version appended after an underscore, e.g.
-`Cabal_3_8_1_0`.
+For packages that are part of [Stackage], we use the version prescribed by a
+Stackage solver (usually the current LTS one) as the default version. For all
+other packages we use the latest version from Hackage. Sometimes alternative
+versions of packages are provided whose attribute names are their normal name
+with their version appended after an underscore, e.g. `Cabal_3_8_1_0`.
 
 <!--
 TODO(@sternenseemann):
@@ -434,8 +433,8 @@ restrictions of nixpkgs, partially in the name of maintainability:
 
 Thus, to get the best experience, make sure that your project can be compiled
 using the default compiler of nixpkgs and recent versions of its dependencies.
-“Recent” can either mean the version contained in a certain Stackage snapshot
-(the latest lts or nightly one) <!-- TODO(@sternenseemann): document our use of solvers -->
+“Recent” can either mean the version contained in a certain [Stackage] snapshot
+(usually the latest LTS or nightly one) <!-- TODO(@sternenseemann): document our use of solvers -->
 or the latest version from Hackage. Similarly to Stackage, we sometimes
 intervene and downgrade packages to ensure as many packages as possible can
 be compiled together.
@@ -918,7 +917,7 @@ covered in the old [haskell4nix docs](https://haskell4nix.readthedocs.io/).
 If you feel any important topic is not documented at all, feel free to comment
 on the issue linked above.
 
-[stackage-nightly]: https://www.stackage.org/nightly
+[Stackage]: https://www.stackage.org
 [cabal2nix]: https://github.com/nixos/cabal2nix
 [hoogle]: https://wiki.haskell.org/Hoogle
 [haddock]: https://www.haskell.org/haddock/
