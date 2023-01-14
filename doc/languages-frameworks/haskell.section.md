@@ -867,7 +867,7 @@ benchmark component.
 : Set `doBenchmark` to `false` for `drv`.
 
 `setBuildTargets list drv`
-: Sets `buildTargets` argument to `list` for `drv`.
+: Sets the `buildTarget` argument for `drv` so that the targets specified in `list` are built.
 
 `doCoverage drv`
 : Sets the `doCoverage` argument to `true` for `drv`.
