@@ -14,6 +14,11 @@ first-class support for the default compiler (currently GHC 9.2.4) and usually
 only provide a default and (if different) the latest version of a haskell
 package.
 
+<!-- TODO(@sternensemann): Fix duplication w.r.t. package set generations
+and package set rationale from a maintenance perspective. Probably just add
+a dedicated section for this…
+-->
+
 ## Available packages {#sec-haskell-available-packages}
 
 The compiler and most build tools are exposed at the top level:
