@@ -828,10 +828,10 @@ ugly, and we may want to deprecate them at some point. -->
 : Adds the strings in `list` to the `configureFlags` argument for `drv`.
 
 `enableCabalFlag flag drv`
-: Makes sure that the Cabal package `flag` is enabled in Cabal's configure step.
+: Makes sure that the Cabal flag `flag` is enabled in Cabal's configure step.
 
 `disableCabalFlag flag drv`
-: Makes sure that the Cabal package `flag` is disabled in Cabal's configure step.
+: Makes sure that the Cabal flag `flag` is disabled in Cabal's configure step.
 
 `appendBuildflags list drv`
 : Adds the strings in `list` to the `buildFlags` argument for `drv`.
