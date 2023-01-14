@@ -878,6 +878,35 @@ benchmark component.
 `dontCoverage drv`
 : Sets the `doCoverage` argument to `false` for `drv`.
 
+#### Library functions in the Haskell package sets
+
+Some library functions depend on packages from the Haskell package sets. Thus they are
+exposed from those instead of from `haskell.lib.compose` which can only access what is
+passed directly to it. When using the functions below, make sure that you are obtaining them
+from the same package set (`haskellPackages`, `haskell.packages.ghc944` etc.) as the packages
+you are working with or – even better – from the `self`/`final` fix point of your overlay to
+`haskellPackages`.
+
+Note: Some functions like `shellFor` that are not intended for overriding per se, are omitted
+in this section. <!-- TODO(@sternenseemann): note about ifd section -->
+
+`cabalSdist { src, name }`
+: Generates the Cabal sdist tarball for `src`, suitable for uploading to Hackage.
+Contrary to `haskell.lib.compose.sdistTarball`, it uses `cabal-install` over `Setup.hs`,
+so it is usually faster: No build dependencies need to be downloaded and we can
+skip compiling `Setup.hs`.
+
+`buildFromCabalSdist drv`
+: Build `drv`, but run its `src` attribute through `cabalSdist` first. Useful for catching
+files necessary for compilation that are missing from the sdist.
+
+`generateOptparseApplicativeCompletions list drv`
+: Generate and install shell completion files for the installed executables whose
+names are given via `list`. The executables need to be using `optparse-applicative`
+for [this to work][optparse-applicative-completions].
+Note that this feature is automatically disabled when cross-compiling, since it
+requires executing the binaries in question.
+
 <!--
 
 TODO(@NixOS/haskell): finish these planned sections
@@ -935,3 +964,4 @@ on the issue linked above.
 [jailbreak-cabal]: https://github.com/peti/jailbreak-cabal/
 [cpphs]: https://hackage.haskell.org/package/cpphs
 [cabal-project-files]: https://cabal.readthedocs.io/en/latest/cabal-project.html
+[optparse-applicative-completions]: https://github.com/pcapriotti/optparse-applicative/blob/7726b63796aa5d0df82e926d467f039b78ca09e2/README.md#bash-zsh-and-fish-completions
